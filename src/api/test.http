@@ -1,0 +1,75 @@
+### register user
+POST http://localhost:5000/api/users/register
+Content-Type: application/json
+
+{
+    "name": "ndumia",
+    "email": "ndumia@gmail.com",
+    "password": "123456789",
+    "role": "admin"
+}
+
+
+POST http://localhost:5000/api/users/register
+Content-Type: application/json
+
+
+{
+    
+    "email": "ndumia@gmail.com",
+    "password": "123456789",
+}
+
+
+POST  http://localhost:5000/api/users/add
+Content-Type: application/json
+
+{
+    "name": "added",
+    "email": "user@gmail.com",
+    "password": "123456789",
+    "role": "instructor"
+}
+
+
+DELETE http://localhost:5000/api/users/:id
+Content-Type: application/json
+
+AUTHORIZATION<BEARER TOKEN>
+
+
+##### Products
+POST http://localhost:5000/api/products
+Content-Type: application/json
+{
+    "name": "chaff cutter",
+    "price": 185,
+    "description": "Chaff cutter machine",
+    "category": "machines"
+}
+
+###all products
+GET http://localhost:5000/api/products
+Content-Type: application/json
+
+
+### get product by Id
+GET http://localhost:5000/api/products/id
+Content-Type: application/json
+
+### Delete a product by Id
+DELETE http://localhost:5000/api/products/id
+Content-Type: application/json
+
+
+### update a product by Id
+PUT http://localhost:5000/api/products/id
+Content-Type: application/json
+
+
+
+### upload a file
+POST http://localhost:5000/api/products
+Content-Type: form data
+
+
