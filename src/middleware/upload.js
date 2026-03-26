@@ -1,7 +1,7 @@
 import multer from "multer";
 import path from "path";
 
-// 📁 Storage config
+// 📁 Storage config store outside src in uploads folder
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "uploads/");

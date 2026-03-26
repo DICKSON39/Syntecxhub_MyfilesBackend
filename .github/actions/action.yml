@@ -1,0 +1,15 @@
+name: 'Deploy to Render'
+description: 'Trigger Render deployment via deploy hook'
+
+inputs:
+  deploy-hook:
+    description: 'Render deploy hook URL'
+    required: true
+
+outputs:
+  website-url:
+    description: 'Live URL of the website'
+
+runs:
+  using: 'node16'
+  main: 'main.js'

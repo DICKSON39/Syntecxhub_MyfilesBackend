@@ -78,7 +78,9 @@ export const addUser = async (req, res) => {
       role,
     });
 
-    res.status(201).json(user);
+    res.status(201).json({
+      result: user
+    });
 
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -96,9 +98,47 @@ export const deleteUser = async (req, res) => {
 
     await user.deleteOne();
 
-    res.json({ message: "User deleted successfully" });
+    res.json({ message: "User deleted successfully", 
+      result: user
+     });
 
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
+export const getUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json({
+      message: "success",
+      data: users
+  });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+//UPDATE THE USER
+export const updateUser = async (req, res) => {
+  try {
+    const product = await User.findById(req.params.id);
+
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+
+    const updated = await User.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+
+    res.json({
+      message: "User Update successfully",
+      result: updated
+    });
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+

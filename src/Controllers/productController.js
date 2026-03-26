@@ -58,6 +58,10 @@ export const getProducts = async (req, res) => {
   }
 };
 
+
+
+
+
 // 🔍 GET SINGLE PRODUCT
 export const getProductById = async (req, res) => {
   try {
