@@ -31,7 +31,7 @@ jobs:
 
       - name: Deploy my project to render
         if: github.event_name == 'push'
-        run: curl -X POST {{secrets.RENDER_DEPLOY_HOOK}}
+        run: curl -X POST ${{secrets.RENDER_DEPLOY_HOOK}}
 
 
 
